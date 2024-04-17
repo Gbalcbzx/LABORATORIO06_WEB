@@ -29,6 +29,24 @@ app.get('/doctores', (req, res) => {
 });
 });
 
+app.get('/dogs', (req, res)=>{
+  res.render('pet.ejs', {pets: 
+    [
+      {
+      img: "images/g-1.png"
+      },
+      {
+        img: 'images/g-2.png'
+        },
+      { 
+        img: 'images/g-3.png'
+      },
+      { 
+        img: 'images/g-4.png'
+      },
+    ]  
+})
+})
 // Configurar EJS como motor de plantillas para una ruta específica
 app.engine('ejs', require('ejs').renderFile);
 

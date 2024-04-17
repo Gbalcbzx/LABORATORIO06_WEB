@@ -56,10 +56,10 @@
                   <a class="nav-link" href="service.html">service </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pet.html">Pet's gallery </a>
+                  <a class="nav-link" href="dogs">Pet's gallery </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="clinic.html"> clinic</a>
+                  <a class="nav-link" href="doctores"> clinic</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
@@ -84,31 +84,25 @@
     <!-- end header section -->
   </div>
 
-  <!-- gallery section -->
-  <section class="gallery-section layout_padding">
-    <div class="container">
-      <h2>
-        Our Gallery
-      </h2>
-    </div>
-    <div class="container ">
-      <div class="img_box box-1">
-        <img src="images/g-1.png" alt="">
-      </div>
-      <div class="img_box box-2">
-        <img src="images/g-2.png" alt="">
-      </div>
-      <div class="img_box box-3">
-        <img src="images/g-3.png" alt="">
-      </div>
-      <div class="img_box box-4">
-        <img src="images/g-4.png" alt="">
-      </div>
-      <div class="img_box box-5">
-        <img src="images/g-5.png" alt="">
-      </div>
-    </div>
-  </section>
+  
+ <!-- gallery section -->
+ <section class="gallery-section layout_padding">
+  <div class="container">
+    <h2>
+      Our Gallery
+    </h2>
+  </div>
+  <div class="container ">
+    <div class="img_box" style="display: flex; gap: 5px;">
+      <% for(let i = 0; i < pets.length; i++) { %>
+          <div>
+            <img src="<%= pets[i].img %>" alt="">
+          </div>
+       <% }
+      %>
+  </div>
+  </div>
+</section>
 
 
 
