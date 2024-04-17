@@ -7,10 +7,7 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use(express.static('public'));
-// Ruta para renderizar la plantilla Pug
-app.get('/pug', (req, res) => {
-  res.render('index', { name: 'Usuario Pug' });
-});
+
 
 //doctores
 app.get('/doctores', (req, res) => {
@@ -40,6 +37,11 @@ app.get('/ejs', (req, res) => {
   res.render('index.ejs', { name: 'Usuario EJS' });
 });
 
+app.get('/service', (req, res) => {
+    res.render('service.ejs', { mensaje: '¡Hola desde la plantilla Service!' });
+});
+
+
 app.get('/perfil/:id', (req, res) => {
     const userId = req.params.id;
     // Aquí puedes buscar los datos del usuario en una base de datos, por ejemplo
@@ -47,17 +49,6 @@ app.get('/perfil/:id', (req, res) => {
     res.render('perfil', { user: user });
   });
 
-// Ruta para renderizar la plantilla Pug
-app.get('/miplantilla-pug', (req, res) => {
-    res.render('miplantilla', { mensaje: '¡Hola desde la plantilla Pug!' });
-  });
-  
-  // Ruta para renderizar la plantilla EJS
-  app.get('/miplantilla-ejs', (req, res) => {
-    res.render('miplantilla.ejs', { mensaje: '¡Hola desde la plantilla EJS!' });
-  });
-  
-  
 
 // Iniciar el servidor en el puerto 3000
 app.listen(3000, () => {
