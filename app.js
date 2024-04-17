@@ -12,6 +12,26 @@ app.get('/pug', (req, res) => {
   res.render('index', { name: 'Usuario Pug' });
 });
 
+//doctores
+app.get('/doctores', (req, res) => {
+  res.render('doctores.ejs', { name1: 'Patsy Delgado Cubas',
+  name2: 'Gabriel Chavezs Benites',
+  name3: 'Miguel Fernandez Rios',
+  name4: 'David Ruiz Torres',
+  texto1:'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
+  texto2: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
+  texto3:'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
+  texto4: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
+  n1: '958031820',
+  n2: '958031999',
+  n3: '999031820',
+  n4: '999031820',
+  locacion: 'Trujillo',
+  telefono:'95803166', 
+  correo: 'guao@tecsup.edu.pe'
+});
+});
+
 // Configurar EJS como motor de plantillas para una ruta específica
 app.engine('ejs', require('ejs').renderFile);
 
