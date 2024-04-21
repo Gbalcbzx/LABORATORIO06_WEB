@@ -102,9 +102,32 @@ app.get('/contact', (req, res) => {
   });
 })
 
+
+
+
 app.get('/buy', (req, res) => {
-  res.render('buy.ejs');
-})
+
+  // Testimonios
+  const testimonios = [
+    {
+      nombre: 'María González',
+      texto: 'Desde que llevo a mi perro al Centro Veterinario Petology, mi mascota ha estado mucho más feliz y saludable. El personal es increíblemente amable y atento, y siempre me brindan excelentes recomendaciones para el cuidado de mi compañero peludo. ¡Definitivamente recomiendo este lugar!',
+      imagen: 'images/client.jpg'
+    },
+    {
+      nombre: 'Carlos Pérez',
+      texto: 'Gracias a los expertos en Petology, mi perro pudo superar sus problemas de salud y ahora está más enérgico que nunca. Su atención y cuidado han marcado una gran diferencia en la vida de mi mascota. ¡Son los mejores veterinarios que he conocido!',
+      imagen: 'images/client.jpg'
+    },
+    {
+      nombre: 'Pedro Sánchez',
+      texto: 'Petology es el lugar perfecto para el cuidado de tu perro. Siempre que llevo a mi mascota, recibe el mejor trato y atención posible. Estoy muy agradecido por el profesionalismo y la pasión que muestran hacia los animales. ¡Altamente recomendado!',
+      imagen: 'images/client.jpg'
+    }
+  ];
+  
+  res.render('buy.ejs', { testimonios: testimonios });
+});
 
 app.get('/perfil/:id', (req, res) => {
     const userId = req.params.id;
