@@ -165,11 +165,8 @@ app.get('/contact', (req, res) => {
 })
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> eed8b81168577e1c572490728d70463954e0ec18
 app.get('/buy', (req, res) => {
 
   // Testimonios
@@ -191,7 +188,9 @@ app.get('/buy', (req, res) => {
     }
   ];
   
-  res.render('buy.ejs', { testimonios: testimonios });
+  res.render('buy.ejs', { testimonios: testimonios, locacion: 'Trujillo',
+  telefono:'95803166', 
+  correo: 'guao@tecsup.edu.pe' });
 });
 
 
