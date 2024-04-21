@@ -35,42 +35,43 @@
     <%- include('components/navbar.ejs') %>
     <!-- end header section -->
   </div>
-</div>
-<section class="about_section layout_padding">
-  <div class="container">
-    <div class="row">
-      <% doctores.forEach(function(doctor) { %>
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/about.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2 class="custom_heading">
-              Nombre del Doctor: <!-- Título del doctor -->
-              <span>
-                <%= doctor.name %>
-              </span>
-            </h2>
-            <p>
-              <%= doctor.texto %>
-            </p>
-            <div>
-              Teléfono: <!-- Enlace de contacto -->
-              <a href="<%= doctor.telefono %>">
-                <%= doctor.telefono %>
-              </a>
+  <section class="about_section layout_padding">
+    <div class="container">
+      <% for (let i = 0; i < doctores.length; i += 2) { %>
+        <div class="row">
+          <% for (let j = i; j < i + 2 && j < doctores.length; j++) { %>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="<%= doctores[j].img %>" alt="" style="max-width: 400px; max-height: 400px;">
+              </div>
             </div>
-          </div>
+            <div class="col-md-6">
+              <div class="detail-box">
+                <h2 class="custom_heading">
+                  Nombre del Doctor: <!-- Título del doctor -->
+                  <span>
+                    <%= doctores[j].name %>
+                  </span>
+                </h2>
+                <p>
+                  <%= doctores[j].texto %>
+                </p>
+                <div>
+                  Teléfono: <!-- Enlace de contacto -->
+                  <a href="<%= doctores[j].telefono %>">
+                    <%= doctores[j].telefono %>
+                  </a>
+                </div>
+              </div>
+            </div>
+          <% } %>
         </div>
-      <% }); %>
+      <% } %>
     </div>
-  </div>
-</section>
-
+  </section>
   
-
+  
+  
   <!-- info section -->
   <%- include('components/footer.ejs') %>
   <!-- end info_section -->

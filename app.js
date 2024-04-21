@@ -44,26 +44,31 @@ app.get('/doctores', (req, res) => {
       name: 'Patsy Delgado Cubas',
       texto: 'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
       telefono: '958031820',
+      img: 'https://cdn-icons-png.flaticon.com/512/2138/2138473.png'
     },
     { 
       name: 'Gabriel Chavezs Benites',
       texto: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
       telefono: '958031999',
+      img: 'https://images.vexels.com/media/users/3/282757/isolated/preview/d4b14a4cd0b5bb4a9c79c0d29eaac094-animal-ma-dico-veterinario-personas.png'
     },
     { 
       name: 'Miguel Fernandez Rios',
       texto: 'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
       telefono: '999031820',
+      img: 'https://png.pngtree.com/png-clipart/20230914/original/pngtree-vet-clipart-doctor-is-standing-with-cats-and-dogs-cartoon-vector-png-image_12149789.png'
     },
     { 
       name: 'David Ruiz Torres',
       texto: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
       telefono: '999031820',
+      img: 'https://images.vexels.com/media/users/3/281834/isolated/preview/292a102156737f48f098728a9f315c4c-ma-dico-veterinario-personas.png'
     },
     { 
-      name: 'Cesar',
+      name: 'Kólobi Orbegoso Pardavé',
       texto: 'jusjsjsjsjsjjssj',
       telefono: '999999999',
+      img: 'https://images.vexels.com/media/users/3/281838/isolated/preview/5de109888b693c699226c8364fb2802e-perro-veterinario-animales-personas.png'
     },
   ];
 
