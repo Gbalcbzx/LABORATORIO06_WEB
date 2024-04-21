@@ -29,7 +29,7 @@ app.get('/doctores', (req, res) => {
 });
 });
 
-app.get('/dogs', (req, res)=>{
+app.get('/pets', (req, res)=>{
   res.render('pet.ejs', {pets: 
     [
       {
@@ -44,6 +44,9 @@ app.get('/dogs', (req, res)=>{
       { 
         img: 'images/g-4.png'
       },
+      { 
+        img: 'images/g-5.png'
+      },
     ]  
 })
 })
@@ -51,7 +54,7 @@ app.get('/dogs', (req, res)=>{
 app.engine('ejs', require('ejs').renderFile);
 
 // Ruta para renderizar la plantilla EJS
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
   res.render('index.ejs', { name: 'Usuario EJS' });
 
   
@@ -70,6 +73,16 @@ app.get('/service', (req, res) => {
     });
 });
 
+app.get('/contact', (req, res) => {
+  res.render('contact.ejs', {
+    title: 'Contáctanos',
+    description: 'Completa todos los campos del formulario.'
+  });
+})
+
+app.get('/buy', (req, res) => {
+  res.render('buy.ejs');
+})
 
 app.get('/perfil/:id', (req, res) => {
     const userId = req.params.id;
