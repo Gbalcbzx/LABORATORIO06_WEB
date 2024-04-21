@@ -7,6 +7,36 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
+// Index
+app.get('/', (req, res) => {
+  const slider = [
+    {
+      titulo : 'Petology',
+      subTitulo: 'Amor y cuidado para tus mascotas',
+      tex: 'nuestro compromiso es combinar el amor por las mascotas con la excelencia veterinaria, asegurando que tus compañeros peludos reciban la mejor atención posible.'
+
+    },
+    {
+      titulo : 'Petology',
+      subTitulo: 'Salud y felicidad para tu amigo peludo',
+      text: 'En Petology, cada cola que menea es una señal de nuestra dedicación a proporcionar atención integral para mantener sonrisas peludas en cada hogar'
+    },
+    {
+      titulo : 'Petology',
+      subTitulo: 'Cuidando sonrisas peludas',
+      text: 'Cada cola que menea es una señal de nuestra dedicación a proporcionar atención integral para mantener sonrisas peludas en cada hogar'
+    },
+    {
+      titulo : 'Petology',
+      subTitulo: 'Amor en cada visita',
+      text: 'Nuestro objetivo es llenar cada visita con amor y cuidado, creando vínculos duraderos con tus adorables amigos peludos'
+    }
+  ]
+  res.render('index.ejs', { slider, text2: 'Nuestros engreídos', locacion: 'Trujillo',
+  telefono:'95803166', 
+  correo: 'guao@tecsup.edu.pe'});
+});
+
 // Doctores
 app.get('/doctores', (req, res) => {
   const doctores = [
@@ -44,15 +74,18 @@ app.get('/doctores', (req, res) => {
 });
 
 //dogs
-app.get('/pets', (req, res)=>{
-  res.render('pet.ejs', {pets: 
-    [
+app.get('/pets', (req, res) => {
+  res.render('pet.ejs', { 
+    locacion: 'Trujillo',
+    telefono: '95803166', 
+    correo: 'guao@tecsup.edu.pe',
+    pets: [
       {
-      img: "images/g-1.png"
+        img: "images/g-1.png"
       },
       {
         img: 'images/g-2.png'
-        },
+      },
       { 
         img: 'images/g-3.png'
       },
@@ -96,8 +129,9 @@ app.get('/pets', (req, res)=>{
         img: 'https://purina.com.pe/sites/default/files/2022-10/purina-brand-que-sabes-de-los-perros-poodle.jpg'
       }
     ]  
-})
-})
+  });
+});
+
 
 //servicio
 app.get('/service', (req, res) => {
@@ -115,20 +149,27 @@ app.get('/service', (req, res) => {
       descripcion : 'Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier emergencia que pueda surgir con tus mascotas. Ya sea un accidente, una enfermedad repentina o cualquier otra situación urgente, puedes confiar en nosotros para brindar atención médica inmediata y de calidad a tu mascota. Su bienestar es nuestra prioridad.',
     }
   ]
-    res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios'});
+    res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios',  locacion: 'Trujillo',
+    telefono:'95803166', 
+    correo: 'guao@tecsup.edu.pe'});
 });
 
 //contacto
 app.get('/contact', (req, res) => {
   res.render('contact.ejs', {
     title: 'Contáctanos',
-    description: 'Completa todos los campos del formulario.'
+    description: 'Completa todos los campos del formulario.',locacion: 'Trujillo',
+    telefono:'95803166', 
+    correo: 'guao@tecsup.edu.pe'
   });
 })
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> eed8b81168577e1c572490728d70463954e0ec18
 app.get('/buy', (req, res) => {
 
   // Testimonios
