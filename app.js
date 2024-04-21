@@ -94,13 +94,6 @@ app.get('/pets', (req, res) => {
       },
       { 
         img: 'images/g-5.png'
-<<<<<<< HEAD
-      }
-    ]
-  });
-});
-
-=======
       },
       {
         img: 'https://estaticos-cdn.prensaiberica.es/clip/823f515c-8143-4044-8f13-85ea1ef58f3a_16-9-discover-aspect-ratio_default_0.jpg'
@@ -136,9 +129,9 @@ app.get('/pets', (req, res) => {
         img: 'https://purina.com.pe/sites/default/files/2022-10/purina-brand-que-sabes-de-los-perros-poodle.jpg'
       }
     ]  
-})
-})
->>>>>>> fc098c9e2daab352a1676d7c3f0e6a8f00088a4a
+  });
+});
+
 
 //servicio
 app.get('/service', (req, res) => {
