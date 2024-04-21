@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 
 // Configurar el motor de plantillas
-app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use(express.static('public'));
@@ -67,16 +66,7 @@ app.get('/pets', (req, res)=>{
 })
 })
 
-// Configurar EJS como motor de plantillas para una ruta específica
-app.engine('ejs', require('ejs').renderFile);
-
-// Ruta para renderizar la plantilla EJS
-app.get('/', (req, res) => {
-  res.render('index.ejs', { name: 'Usuario EJS' });
-
-  
-});
-
+//servicio
 app.get('/service', (req, res) => {
   const service =[
     {
@@ -95,6 +85,7 @@ app.get('/service', (req, res) => {
     res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios'});
 });
 
+//contacto
 app.get('/contact', (req, res) => {
   res.render('contact.ejs', {
     title: 'Contáctanos',
@@ -102,16 +93,19 @@ app.get('/contact', (req, res) => {
   });
 })
 
+// Configurar EJS como motor de plantillas para una ruta específica
+app.engine('ejs', require('ejs').renderFile);
+
+// Ruta para renderizar la plantilla EJS
+app.get('/', (req, res) => {
+  res.render('index.ejs', { name: 'Usuario EJS' });
+
+  
+});
+
 app.get('/buy', (req, res) => {
   res.render('buy.ejs');
 })
-
-app.get('/perfil/:id', (req, res) => {
-    const userId = req.params.id;
-    // Aquí puedes buscar los datos del usuario en una base de datos, por ejemplo
-    const user = { id: userId, nombre: 'Usuario ' + userId };
-    res.render('perfil', { user: user });
-  });
 
 
 // Iniciar el servidor en el puerto 3000
