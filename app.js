@@ -44,7 +44,7 @@ app.get('/doctores', (req, res) => {
     correo: 'guao@tecsup.edu.pe'});
 });
 
-
+//dogs
 app.get('/dogs', (req, res)=>{
   res.render('pet.ejs', {pets: 
     [
@@ -63,6 +63,7 @@ app.get('/dogs', (req, res)=>{
     ]  
 })
 })
+
 // Configurar EJS como motor de plantillas para una ruta específica
 app.engine('ejs', require('ejs').renderFile);
 
@@ -74,16 +75,21 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/service', (req, res) => {
-    res.render('service.ejs', { 
-        titulo: 'Nuestros Servicios', 
-        Servicio1: 'Spa de Mascotas', 
-        Servicio2: 'Vacunas', 
-        Servicio3: 'Emergencias',
-        descripcionS1: 'Servicio especializado en el cuidado y bienestar de tus mascotas. Nuestro spa ofrece tratamientos de lujo que incluyen baños relajantes, masajes terapéuticos y sesiones de peluquería. Tu mascota se sentirá mimada y rejuvenecida después de una visita a nuestro spa.',
-        descripcionS2: 'En nuestro centro médico, nos tomamos muy en serio la salud de tus mascotas. Ofrecemos un completo programa de vacunación para prevenir enfermedades comunes y proteger la salud de tus queridos compañeros. Nuestro equipo de veterinarios altamente calificados garantiza la seguridad y eficacia de cada vacuna administrada.',
-        descripcionS3: 'Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier emergencia que pueda surgir con tus mascotas. Ya sea un accidente, una enfermedad repentina o cualquier otra situación urgente, puedes confiar en nosotros para brindar atención médica inmediata y de calidad a tu mascota. Su bienestar es nuestra prioridad.',
-        boton: 'Te esperamos'   
-    });
+  const service =[
+    {
+      Servicio : 'Spa de Mascotas', 
+      descripcion : 'Servicio especializado en el cuidado y bienestar de tus mascotas. Nuestro spa ofrece tratamientos de lujo que incluyen baños relajantes, masajes terapéuticos y sesiones de peluquería. Tu mascota se sentirá mimada y rejuvenecida después de una visita a nuestro spa.',
+    },
+    {
+      Servicio : 'Vacunas',
+      descripcion :'En nuestro centro médico, nos tomamos muy en serio la salud de tus mascotas. Ofrecemos un completo programa de vacunación para prevenir enfermedades comunes y proteger la salud de tus queridos compañeros. Nuestro equipo de veterinarios altamente calificados garantiza la seguridad y eficacia de cada vacuna administrada.',
+    },
+    {
+      Servicio: 'Emergencias',
+      descripcion : 'Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier emergencia que pueda surgir con tus mascotas. Ya sea un accidente, una enfermedad repentina o cualquier otra situación urgente, puedes confiar en nosotros para brindar atención médica inmediata y de calidad a tu mascota. Su bienestar es nuestra prioridad.',
+    }
+  ]
+    res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios'});
 });
 
 

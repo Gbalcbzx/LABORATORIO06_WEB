@@ -84,73 +84,46 @@
     <!-- end header section -->
   </div>
 
-  <!-- service section -->
-  <section class="service_section layout_padding">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 offset-md-2">
-          <h2 class="custom_heading">
-             <span><%= titulo %></span>
-          </h2>
-          <div class="container layout_padding2">
-            <div class="row">
+<!-- service section -->
+<section class="service_section layout_padding">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 offset-md-2">
+        <h2 class="custom_heading">
+          <span><%= titulo %></span>
+        </h2>
+        <div class="container layout_padding2">
+          <div class="row">
+            <% service.forEach((servicio, index) => { %>
               <div class="col-md-4">
                 <div class="img_box">
-                  <img src="images/s-1.png" alt="">
+                  <img src="images/s-<%= index + 1 %>.png" alt="">
                 </div>
                 <div class="detail_box">
                   <h6>
-                    <%= Servicio1 %>
+                    <%= servicio.Servicio %>
                   </h6>
                   <p>
-                    <%= descripcionS2 %>
+                    <%= servicio.descripcion %>
                   </p>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-2.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    <%= Servicio2 %>
-                  </h6>
-                  <p>
-                    <%= descripcionS2 %>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-3.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    <%= Servicio3 %>
-                  </h6>
-                  <p>
-                    <%= descripcionS3 %>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a href="">
-              <%= boton %>
-            </a>
+            <% }); %>
           </div>
         </div>
-        <div class="col-md-4">
-          <img src="images/tool.png" alt="" class="w-100">
+        <div>
+          <a href="">
+            <%= boton %>
+          </a>
         </div>
       </div>
+      <div class="col-md-4">
+        <img src="images/tool.png" alt="" class="w-100">
+      </div>
     </div>
-  </section>
-
+  </div>
+</section>
   <!-- end service section -->
-
-
 
   <!-- info section -->
   <section class="info_section layout_padding2">
