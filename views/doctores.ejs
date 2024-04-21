@@ -83,12 +83,11 @@
     </header>
     <!-- end header section -->
   </div>
-
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
+</div>
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <% doctores.forEach(function(doctor) { %>
         <div class="col-md-6">
           <div class="img-box">
             <img src="images/about.png" alt="">
@@ -97,96 +96,28 @@
         <div class="col-md-6">
           <div class="detail-box">
             <h2 class="custom_heading">
-              Veterinario Turno Mañana:
+              Nombre del Doctor: <!-- Título del doctor -->
               <span>
-                <%= name1 %>
+                <%= doctor.name %>
               </span>
             </h2>
             <p>
-              <%= texto1 %>
+              <%= doctor.texto %>
             </p>
             <div>
-              <a href="">
-                <%= n1 %>
+              Teléfono: <!-- Enlace de contacto -->
+              <a href="<%= doctor.telefono %>">
+                <%= doctor.telefono %>
               </a>
             </div>
           </div>
         </div>
-<!-- doctor -->
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2 class="custom_heading">
-              Veterinario Turno Tarde:
-              <span>
-                <%= name2 %>
-              </span>
-            </h2>
-            <p>
-              <%= texto2 %>
-            </p>
-            <div>
-              <a href="">
-                <%= n2 %>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/about.png" alt="">
-          </div>
-        </div>
-<!-- doctor -->
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/about.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h2 class="custom_heading">
-              Veterinario Turno Noche:
-              <span>
-                <%= name3 %>
-              </span>
-            </h2>
-            <p>
-              <%= texto3 %>
-            </p>
-            <div>
-              <a href="">
-                <%= n3 %>
-              </a>
-            </div>
-          </div>
-        </div>
-<!-- doctor -->
-<div class="col-md-6">
-  <div class="detail-box">
-    <h2 class="custom_heading">
-      Veterinario Turno Tarde:
-      <span>
-        <%= name4 %>
-      </span>
-    </h2>
-    <p>
-      <%= texto4 %>
-    </p>
-    <div>
-      <a href="">
-        <%= n4 %>
-      </a>
+      <% }); %>
     </div>
   </div>
-</div>
-<div class="col-md-6">
-  <div class="img-box">
-    <img src="images/about.png" alt="">
-  </div>
-</div>
-      </div>
-    </div>
-  </section>
+</section>
+
+  
 
   <!-- info section -->
   <section class="info_section layout_padding2">
