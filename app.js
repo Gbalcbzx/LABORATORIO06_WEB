@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 
 // Configurar el motor de plantillas
-app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use(express.static('public'));
@@ -63,20 +62,44 @@ app.get('/pets', (req, res)=>{
       { 
         img: 'images/g-5.png'
       },
+      {
+        img: 'https://estaticos-cdn.prensaiberica.es/clip/823f515c-8143-4044-8f13-85ea1ef58f3a_16-9-discover-aspect-ratio_default_0.jpg'
+      },
+      {
+        img: 'https://t1.ea.ltmcdn.com/es/posts/5/6/2/10_caracteristicas_de_los_perros_24265_600_square.jpg'
+      },
+      {
+        img: 'https://media.tycsports.com/files/2023/11/10/644591/perros_862x485.webp'
+      },
+      {
+        img: 'https://imgmedia.elpopular.pe/640x358/elpopular/original/2021/05/21/60a8112b578f8721394ccaef.webp'
+      },
+      {
+        img: 'https://images.hola.com/imagenes/mascotas/20210324186573/perros-gatos-felices-necesidades/0-933-512/veterinario-a.jpg'
+      },
+      {
+        img: 'https://i.pinimg.com/originals/3e/a0/18/3ea0181962706fae49bee9b69f31446c.jpg'
+      },
+      {
+        img: 'https://img.freepik.com/fotos-premium/corriendo-gatos-felices_257123-13846.jpg'
+      },
+      {
+        img: 'https://www.mascotas.com/cms/revista/Revista_6109d6fc0934f_03082021.jpg'
+      },
+      {
+        img: 'https://es.onlyfresh.com/cdn/shop/articles/dog-g6aa17498a_1920_1024x1024.jpg?v=1659454762'
+      },
+      {
+        img: 'https://s1.elespanol.com/2021/11/11/curiosidades/mascotas/626448862_214582604_1024x576.jpg'
+      },
+      {
+        img: 'https://purina.com.pe/sites/default/files/2022-10/purina-brand-que-sabes-de-los-perros-poodle.jpg'
+      }
     ]  
 })
 })
 
-// Configurar EJS como motor de plantillas para una ruta específica
-app.engine('ejs', require('ejs').renderFile);
-
-// Ruta para renderizar la plantilla EJS
-app.get('/', (req, res) => {
-  res.render('index.ejs', { name: 'Usuario EJS' });
-
-  
-});
-
+//servicio
 app.get('/service', (req, res) => {
   const service =[
     {
@@ -95,6 +118,7 @@ app.get('/service', (req, res) => {
     res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios'});
 });
 
+//contacto
 app.get('/contact', (req, res) => {
   res.render('contact.ejs', {
     title: 'Contáctanos',
@@ -128,13 +152,6 @@ app.get('/buy', (req, res) => {
   
   res.render('buy.ejs', { testimonios: testimonios });
 });
-
-app.get('/perfil/:id', (req, res) => {
-    const userId = req.params.id;
-    // Aquí puedes buscar los datos del usuario en una base de datos, por ejemplo
-    const user = { id: userId, nombre: 'Usuario ' + userId };
-    res.render('perfil', { user: user });
-  });
 
 
 // Iniciar el servidor en el puerto 3000

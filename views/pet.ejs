@@ -33,28 +33,28 @@
   <div class="hero_area">
     <!-- header section strats -->
     <%- include('components/navbar.ejs') %>
-    <!-- end header section -->
+      <!-- end header section -->
   </div>
 
+
+  <!-- gallery section -->
+  <section class="gallery-section layout_padding">
+    <div class="container">
+      <h2>
+        Our Gallery
+      </h2>
+    </div>
+
+    <div class="box-images">
+
+      <% for(let i=0; i < pets.length; i++) { %>
+        <div>
+          <img src="<%= pets[i].img %>" alt="">
+        </div>
+      <% } %>
+    </div>
   
- <!-- gallery section -->
- <section class="gallery-section layout_padding">
-  <div class="container">
-    <h2>
-      Our Gallery
-    </h2>
-  </div>
-  <div class="container ">
-    <div class="img_box" style="display: flex; gap: 5px;">
-      <% for(let i = 0; i < pets.length; i++) { %>
-          <div>
-            <img src="<%= pets[i].img %>" alt="">
-          </div>
-       <% }
-      %>
-  </div>
-  </div>
-</section>
+  </section>
 
 
 
