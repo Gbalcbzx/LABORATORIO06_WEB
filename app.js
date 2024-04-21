@@ -8,27 +8,43 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-
-//doctores
+// Doctores
 app.get('/doctores', (req, res) => {
-  res.render('doctores.ejs', { name1: 'Patsy Delgado Cubas',
-  name2: 'Gabriel Chavezs Benites',
-  name3: 'Miguel Fernandez Rios',
-  name4: 'David Ruiz Torres',
-  texto1:'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
-  texto2: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
-  texto3:'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
-  texto4: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
-  n1: '958031820',
-  n2: '958031999',
-  n3: '999031820',
-  n4: '999031820',
-  locacion: 'Trujillo',
-  telefono:'95803166', 
-  correo: 'guao@tecsup.edu.pe'
-});
+  const doctores = [
+    { 
+      name: 'Patsy Delgado Cubas',
+      texto: 'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
+      telefono: '958031820',
+    },
+    { 
+      name: 'Gabriel Chavezs Benites',
+      texto: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
+      telefono: '958031999',
+    },
+    { 
+      name: 'Miguel Fernandez Rios',
+      texto: 'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
+      telefono: '999031820',
+    },
+    { 
+      name: 'David Ruiz Torres',
+      texto: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
+      telefono: '999031820',
+    },
+    { 
+      name: 'Cesar',
+      texto: 'jusjsjsjsjsjjssj',
+      telefono: '999999999',
+    },
+  ];
+
+  res.render('doctores.ejs', { doctores ,
+    locacion: 'Trujillo',
+    telefono:'95803166', 
+    correo: 'guao@tecsup.edu.pe'});
 });
 
+//dogs
 app.get('/pets', (req, res)=>{
   res.render('pet.ejs', {pets: 
     [
@@ -50,6 +66,7 @@ app.get('/pets', (req, res)=>{
     ]  
 })
 })
+
 // Configurar EJS como motor de plantillas para una ruta específica
 app.engine('ejs', require('ejs').renderFile);
 
@@ -61,16 +78,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/service', (req, res) => {
-    res.render('service.ejs', { 
-        titulo: 'Nuestros Servicios', 
-        Servicio1: 'Spa de Mascotas', 
-        Servicio2: 'Vacunas', 
-        Servicio3: 'Emergencias',
-        descripcionS1: 'Servicio especializado en el cuidado y bienestar de tus mascotas. Nuestro spa ofrece tratamientos de lujo que incluyen baños relajantes, masajes terapéuticos y sesiones de peluquería. Tu mascota se sentirá mimada y rejuvenecida después de una visita a nuestro spa.',
-        descripcionS2: 'En nuestro centro médico, nos tomamos muy en serio la salud de tus mascotas. Ofrecemos un completo programa de vacunación para prevenir enfermedades comunes y proteger la salud de tus queridos compañeros. Nuestro equipo de veterinarios altamente calificados garantiza la seguridad y eficacia de cada vacuna administrada.',
-        descripcionS3: 'Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier emergencia que pueda surgir con tus mascotas. Ya sea un accidente, una enfermedad repentina o cualquier otra situación urgente, puedes confiar en nosotros para brindar atención médica inmediata y de calidad a tu mascota. Su bienestar es nuestra prioridad.',
-        boton: 'Te esperamos'   
-    });
+  const service =[
+    {
+      Servicio : 'Spa de Mascotas', 
+      descripcion : 'Servicio especializado en el cuidado y bienestar de tus mascotas. Nuestro spa ofrece tratamientos de lujo que incluyen baños relajantes, masajes terapéuticos y sesiones de peluquería. Tu mascota se sentirá mimada y rejuvenecida después de una visita a nuestro spa.',
+    },
+    {
+      Servicio : 'Vacunas',
+      descripcion :'En nuestro centro médico, nos tomamos muy en serio la salud de tus mascotas. Ofrecemos un completo programa de vacunación para prevenir enfermedades comunes y proteger la salud de tus queridos compañeros. Nuestro equipo de veterinarios altamente calificados garantiza la seguridad y eficacia de cada vacuna administrada.',
+    },
+    {
+      Servicio: 'Emergencias',
+      descripcion : 'Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana, para atender cualquier emergencia que pueda surgir con tus mascotas. Ya sea un accidente, una enfermedad repentina o cualquier otra situación urgente, puedes confiar en nosotros para brindar atención médica inmediata y de calidad a tu mascota. Su bienestar es nuestra prioridad.',
+    }
+  ]
+    res.render('service.ejs', { service, boton: 'Te esperamos', titulo: 'Nuestros servicios'});
 });
 
 app.get('/contact', (req, res) => {
