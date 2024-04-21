@@ -8,26 +8,42 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-
-//doctores
+// Doctores
 app.get('/doctores', (req, res) => {
-  res.render('doctores.ejs', { name1: 'Patsy Delgado Cubas',
-  name2: 'Gabriel Chavezs Benites',
-  name3: 'Miguel Fernandez Rios',
-  name4: 'David Ruiz Torres',
-  texto1:'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
-  texto2: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
-  texto3:'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
-  texto4: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
-  n1: '958031820',
-  n2: '958031999',
-  n3: '999031820',
-  n4: '999031820',
-  locacion: 'Trujillo',
-  telefono:'95803166', 
-  correo: 'guao@tecsup.edu.pe'
+  const doctores = [
+    { 
+      name: 'Patsy Delgado Cubas',
+      texto: 'Veterinaria con un enfoque holístico en la salud animal, experta en medicina alternativa y terapias complementarias.',
+      telefono: '958031820',
+    },
+    { 
+      name: 'Gabriel Chavezs Benites',
+      texto: 'Veterinario con una pasión innata por la vida silvestre, siempre lleva consigo su cámara para capturar momentos únicos en la naturaleza.',
+      telefono: '958031999',
+    },
+    { 
+      name: 'Miguel Fernandez Rios',
+      texto: 'Veterinario equino con manos firmes y un espíritu tranquilo, conocido por su habilidad para calmar a los caballos más nerviosos.',
+      telefono: '999031820',
+    },
+    { 
+      name: 'David Ruiz Torres',
+      texto: 'Veterinario de pequeños animales con un sentido del humor contagioso, capaz de tranquilizar a las mascotas más temerosas con su calidez y paciencia',
+      telefono: '999031820',
+    },
+    { 
+      name: 'Cesar',
+      texto: 'jusjsjsjsjsjjssj',
+      telefono: '999999999',
+    },
+  ];
+
+  res.render('doctores.ejs', { doctores ,
+    locacion: 'Trujillo',
+    telefono:'95803166', 
+    correo: 'guao@tecsup.edu.pe'});
 });
-});
+
 
 app.get('/dogs', (req, res)=>{
   res.render('pet.ejs', {pets: 
